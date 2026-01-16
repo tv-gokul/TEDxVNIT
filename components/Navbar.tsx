@@ -40,7 +40,7 @@ export default function Navbar() {
                 {navLinks.map((item) => (
                     <Link
                         key={item}
-                        href={item === 'Home' ? '/' : `#${item.toLowerCase()}`}
+                        href={item === 'Home' ? '/' : item === 'Team' ? '/team' : `#${item.toLowerCase()}`}
                         className="text-white text-sm uppercase tracking-widest relative group"
                     >
                         {item}
@@ -65,7 +65,7 @@ export default function Navbar() {
                 {navLinks.map((item, index) => (
                     <Link
                         key={item}
-                        href={item === 'Home' ? '/' : `#${item.toLowerCase()}`}
+                        href={item === 'Home' ? '/' : item === 'Team' ? '/team' : `#${item.toLowerCase()}`}
                         className={`text-2xl font-bold uppercase tracking-widest text-white hover:text-[#E62B1E] transition-all duration-300 transform ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
                         style={{ transitionDelay: `${index * 50}ms` }}
                         onClick={() => setIsMenuOpen(false)}
