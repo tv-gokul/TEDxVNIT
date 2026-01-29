@@ -2,10 +2,12 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const pathname = usePathname();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -27,6 +29,16 @@ export default function Navbar() {
 
     const navLinks = ['Home', 'About', 'Speakers', 'Gallery', 'Team', 'Contact'];
 
+    const getHref = (item: string) => {
+        if (item === 'Home') return '/';
+        if (item === 'Team') return '/team';
+        // If we're not on the home page, link to home page with hash
+        if (pathname !== '/') {
+            return `/#${item.toLowerCase()}`;
+        }
+        return `#${item.toLowerCase()}`;
+    };
+
     return (
         <nav className={`fixed top-0 left-0 w-full px-[5%] py-6 md:py-8 flex justify-between items-center z-[100] transition-all duration-300 ${scrolled || isMenuOpen ? 'bg-black/90 backdrop-blur-md py-4 shadow-lg' : 'mix-blend-difference'}`}>
             <div className="logo text-TED-red font-black text-2xl tracking-tighter relative z-[101]">
@@ -40,7 +52,7 @@ export default function Navbar() {
                 {navLinks.map((item) => (
                     <Link
                         key={item}
-                        href={item === 'Home' ? '/' : item === 'Team' ? '/team' : `#${item.toLowerCase()}`}
+                        href={getHref(item)}
                         className="text-white text-sm uppercase tracking-widest relative group"
                     >
                         {item}
@@ -65,7 +77,7 @@ export default function Navbar() {
                 {navLinks.map((item, index) => (
                     <Link
                         key={item}
-                        href={item === 'Home' ? '/' : item === 'Team' ? '/team' : `#${item.toLowerCase()}`}
+                        href={getHref(item)}
                         className={`text-2xl font-bold uppercase tracking-widest text-white hover:text-[#E62B1E] transition-all duration-300 transform ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
                         style={{ transitionDelay: `${index * 50}ms` }}
                         onClick={() => setIsMenuOpen(false)}
