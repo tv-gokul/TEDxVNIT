@@ -18,7 +18,7 @@ export default function Footer() {
                             Unraveling Dimensions. An independently organized TED event at Visvesvaraya National Institute of Technology, Nagpur.
                         </p>
                         <p className="text-white font-bold tracking-widest uppercase text-xs mt-4">
-                            February 7, 2025
+                            February 7, 2026
                         </p>
                     </div>
 
