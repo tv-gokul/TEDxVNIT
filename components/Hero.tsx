@@ -23,7 +23,7 @@ export default function Hero() {
                     </div>
 
                     <p className="text-gray-400 text-lg md:text-xl font-light tracking-wide mb-8 max-w-2xl mx-auto">
-                        Where ideas converge, perspectives shift, and new realities emerge.
+                        Where ideas converge , perspectives shift, and new realities emerge.
                     </p>
 
                     <div className="flex items-center gap-6 mb-8 border border-white/10 bg-white/5 py-3 px-8 rounded-full backpack-blur-sm hover:border-red-500/50 transition-colors duration-300">
