@@ -91,8 +91,8 @@ export default function Navbar() {
                 </div>
             </div>
 
-            <nav className={`fixed top-0 left-0 w-full px-[5%] py-6 md:py-8 flex justify-between items-center z-[1000] transition-all duration-300 ${scrolled || isMenuOpen ? 'bg-black/90 backdrop-blur-md py-4 shadow-lg' : 'mix-blend-difference'}`}>
-                <div className="logo text-TED-red font-black text-2xl tracking-tighter">
+            <nav className={`fixed top-0 left-0 w-full px-[5%] py-6 md:py-8 flex justify-between items-center z-[1000] transition-all duration-300 ${scrolled || isMenuOpen ? 'bg-black/90 backdrop-blur-md py-4 shadow-lg' : 'bg-transparent'}`}>
+                <div className="logo font-black text-2xl tracking-tighter">
                     <span className="text-[#E62B1E]">TED</span>
                     <sup className="text-[0.6em] ml-[-2px] text-[#E62B1E]">x</sup>
                     <span className="text-white">VNIT</span>
